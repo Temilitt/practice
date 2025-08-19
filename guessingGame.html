@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.game-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 5px gray;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 60px;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+p {
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="game-box">
+        <h2>Guess the Number!</h2>
+        <input type="number" id="guessInput" placeholder="Your guess">
+        <button onclick="checkGuess()">Guess</button>
+        <button onclick="newGame()">New Game</button>
+        <p id="message">Start guessing!</p>
+    </div>
+</body>
+</html>
+<script>
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+function checkGuess() {
+    let guess = document.getElementById("guessInput").value;
+    let message = document.getElementById("message");
+    guess = Number(guess);
+    
+    if (guess == randomNumber) {
+        message.innerText = "You got it!";
+    } else if (guess > randomNumber) {
+        message.innerText = "Too high!";
+    } else if (guess < randomNumber) {
+        message.innerText = "Too low!";
+    } else {
+        message.innerText = "Enter a number!";
+    }
+}
+
+function newGame() {
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("guessInput").value = "";
+    document.getElementById("message").innerText = "Start guessing!";
+}
+
+
+//first time commit
+//git init
+//git add.
+//git commit -m "first commit"
+//git remote add from git hub
+//git push origin master
+
+//    const answer = Math.floor(Math.random() * 100) + 1;
+//     const guess = prompt("Guess a number between 1 and 100:");
+//     if (Number(guess) < 1 || Number(guess) > 100 || isNaN(Number(guess))) {
+//         console.log("Invalid input! Please enter a number between 1 and 100.");
+//     } else if (Number(guess) === answer) {
+//         console.log("Correct!");
+//     } else {
+//         console.log(`wrong ! the correct answer is ${answer}`);
+//     }
+
+    
+</script>

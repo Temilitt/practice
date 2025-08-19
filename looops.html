@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        background-color: rgb(223, 204, 204);
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    .bigdiv{
+       background-color: white;
+       padding: 15px;
+       border-radius: 5px;
+       text-align: center;
+       width: 250px;
+       box-shadow: 0 0 5px gray;
+    }
+    h2 {
+       font-size: 18px;
+       margin-bottom: 10px;
+    }
+    input {
+       padding: 5px;
+       margin: 5px;
+       width: 80px;
+   }
+   button {
+    padding: 5px 10px;
+    margin: 5px;
+   }
+
+   #result {
+    margin-top: 10px;
+    text-align: left;
+   }
+</style>
+<body>
+    <div class="bigdiv">
+        <h2>MULTIPLICATION TABLE</h2>
+        <input type="number" id="StartNum" placeholder="Start Number">
+        <input type="number" id="EndNum" placeholder="End Number"></input>
+        <button onclick="ShowTables()">Show Tables</button>
+         <div id="result">Enter numbers!</div>
+    </div>
+</body>
+</html>
+
+<script>
+    function ShowTables() {
+    let start = document.getElementById('StartNum').value;
+    let end = document.getElementById('EndNum').value;
+    let result = document.getElementById('result');
+    if (start === ''|| end === '') {
+        result.innerHTML = 'please enter valid number';
+    }else if (start < 1 || end > 5){
+        result.innerHTML = 'Please enter a number between 0 and 5';
+    }else{
+         for (let i = 5; i >= 1; i--) {
+            //const element = array[i]; 
+    for (let index = 0; index <= 12; index++) {
+          //const element = array[i]; 
+      result.innerHTML += `${i}*${index}=${i*index}<br>`;
+    }
+  }
+  result.innerHTML += `output for ${start} to ${end} multiplication table:<br>;`
+    }
+  }
+
+  //git init
+//git add .
+//git commit -m "first commit"
+//git remote add from git hub
+//git push origin master
+</script>
+   

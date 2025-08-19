@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>30DaysOfJavaScript:03 Day</h1>
+	<h2>Introduction</h2>
+	<button onclick="alert('welcome to javavascript')">click me</button> -->
+
+    <button onclick="alert('welcome to javascript')">click me</button>
+</body>
+</html>
+<script>
+    // console.log(2+2);
+     //comments can make code readable
+    //  comments can make code readable,
+    //   easy to reuse and informative
+  // Declare two variables myAge and yourAge and assign them initial values and log to the browser console
+
+  //let myAge = 25;
+//   let yourAge =30;
+//   console.log(myAge, yourAge);
+  
+//  const PI =Math.PI;
+//  console.log( Math.round(PI));
+
+//  const num = Math.floor(Math.random())*11;
+//  console.log(num);
+ 
+
+//  const paragraph = "My name is Asabeneh Yetayeh. I live in Finland, Helsinki.\
+// I am a teacher and I love teaching. I teach HTML, CSS, JavaScript, React, Redux, \
+// Node.js, Python, Data Analysis and D3.js for anyone who is interested to learn. \
+// In the end of 2019, I was thinking to expand my teaching and to reach \
+// to global audience and I started a Python challenge from November 20 - December 19.\
+// It was one of the most rewarding and inspiring experience.\
+// Now, we are in 2020. I am enjoying preparing the 30DaysOfJavaScript challenge and \
+// I hope you are enjoying too."
+
+//console.log(paragraph)
+ 
+
+//      let string = 'JavaScript'
+// console.log(string.substr(4,6))
+     
+    // let num = Math .floor(Math.random( )*101)
+    // console.log(num);
+ 
+//   Count the number of word love in this sentence.
+
+
+// let  count = 0
+// console.log(++count);
+// console.log(count);
+
+// const now = new Date()
+// console.log(now) // Sat Jan 04 2020 00:56:41 GMT+0200 (Eastern European Standard Time)
+
+
+// let isRaining = true
+// if (isRaining) {
+//   console.log('Remember to take your rain coat.')
+// }
+// let num = 3
+// if (num > 0) {
+//     console.log(`${num} is a positive number`);
+// } else {
+//     console.log(`${num} is a negative number`); 
+// }
+// let a = 0
+// if (a > 0) {
+//   console.log(`${a} is a positive number`)
+// } else if (a < 0) {
+//   console.log(`${a} is a negative number`)
+// } else if (a == 0) {
+//   console.log(`${a} is zero`)
+// } else {
+//   console.log(`${a} is not a number`)
+// }
+// // if else if else
+// let weather = 'sunny'
+// if (weather === 'rainy') {
+//   console.log('You need a rain coat.')
+// } else if (weather === 'cloudy') {
+//   console.log('It might be cold, you need a jacket.')
+// } else if (weather === 'sunny') {
+//   console.log('Go out freely.')
+// } else {
+//   console.log('No need for rain coat.')
+// }
+// Switch More Examples
+// let dayUserInput = prompt('What day is today ?')
+// let day = dayUserInput.toLowerCase()
+
+// switch (day) {
+//   case 'monday':
+//     console.log('Today is Monday')
+//     break
+//   case 'tuesday':
+//     console.log('Today is Tuesday')
+//     break
+//   case 'wednesday':
+//     console.log('Today is Wednesday')
+//     break
+//   case 'thursday':
+//     console.log('Today is Thursday')
+//     break
+//   case 'friday':
+//     console.log('Today is Friday')
+//     break
+//   case 'saturday':
+//     console.log('Today is Saturday')
+//     break
+//   case 'sunday':
+//     console.log('Today is Sunday')
+//     break
+//   default:
+//     console.log('It is not a week day.')
+// }
+ 
+//   let num = prompt('wetin be the number')
+//Write a code which can give grades to students according to theirs scores:
+// 80-100, A
+// 70-89, B
+// 60-69, C
+// 50-59, D
+// 0-49, F
+
+
+// let grades = prompt('enter a grade value')
+// let grade = grades.toLowerCase()
+// switch (grade) {
+//      case '80-100':
+//         console.log('a');
+//         break;
+//          case '70-89':
+//         console.log('b');
+//         break;
+//          case '60-69':
+//         console.log('c');
+//         break;
+//          case '50-59':
+//         console.log('d');
+//         break;
+//          case '0-49':
+//         console.log('e');
+//         break;
+//     default:
+//         //console.log('enter a value');
+        
+//}
+
+// Define the student's score
+// let score = 56; // You can change this value to test different scores
+
+// // Variable to store the grade
+// let grade;
+
+// // Using switch to determine the grade based on score ranges
+// switch (true) {
+//     case (score >= 80 && score <= 100):
+//         grade = 'A';
+//         break;
+//     case (score >= 70 && score <= 79):
+//         grade = 'B';
+//         break;
+//     case (score >= 60 && score <= 69):
+//         grade = 'C';
+//         break;
+//     case (score >= 50 && score <= 59):
+//         grade = 'D';
+//         break;
+//     case (score >= 0 && score <= 49):
+//         grade = 'F';
+//         break;
+//     default:
+//         grade = 'Invalid score'; // For scores outside 0-100
+// }
+
+// // Output the score and corresponding grade
+// console.log(`Score: ${score}`);
+// console.log(`Grade: ${grade}`);
+//if(){
+//}else if(){
+//}
+// Write a code which can give grades to students according to theirs scores:
+// 80-100, A
+// 70-89, B
+// 60-69, C
+// 50-59, D
+// 0-49, F
+
+// let score ='1000'
+// if (score >='80' && score <= '100') {
+//     console.log('result na a');
+// } else if(score >='70' && score <= '89') {
+//     console.log('result na b');
+// }else if(score >='60' && score <= '69') {
+//     console.log('result na c');
+// }else if(score >='50' && score <= '59') {
+//     console.log('result na d');
+// }else if(score >='40' && score <= '49') {
+//     console.log('result na e');
+// }else if(score >='0' && score <= '39') {
+//     console.log('result na f');
+// }else if(score < '0' || score > '100'){
+//     console.log('invalid jhoor');
+// }else{
+//     console.log('invlaiddd');
+    
+// }
+       
+// let months = 'temi'
+// if (months === 'january') {
+//     console.log('it has 31 days');
+// }else if(months === 'february'){
+//     console.log('it has 28 days');
+// }else if(months === 'march'){
+//     console.log('it has 10 days');
+// }else if(months === 'april'){
+//     console.log('it has 34 days');
+// }else if(months === 'may'){
+//     console.log('it has 3 days');
+// }else if(months === 'june'){
+//     console.log('it has 45 days');
+// }else if(months === 'july'){
+//     console.log('it has 10 days');
+// }else if(months === 'august'){
+//     console.log('it has 33 days');
+// }else if(months === 'september'){
+//     console.log('it has 32 days');
+// }else if(months === 'october'){
+//     console.log('it has 5 days');
+// }else if(months === 'november'){
+//     console.log('it has 56 days');
+// }else{
+//     console.log('enter a valid month');
+// }
+
+
+//first time commit
+//git init
+//git add.
+//git commit -m "first commit"
+//git remote add from git hub
+//git push origin master
+
+//second time commit
+//git addd.
+//git commit -m "different commit message"
+//git push origin master
+
+const PI = Math.PI
+console.log(Math.round(PI));
+
+const RandNum = Math.floor(Math.random()*10+1)
+console.log(RandNum);
+
+let a = 4
+let b = 10
+console.log(`the sum of ${a} and ${b} is ${a+b}`);
+
+let num = 15
+let Numint = parseInt(num)
+console.log(Numint);
+
+//'Love is the best thing in this world. Some found their love and some are still looking for their love.
+let guess = 'Love is the best thing in this world. Some found their love and some are still looking for their love.'
+console.log( guess.search('love'));
+
+//Calculate the total annual income of the person by extracting the numbers
+//  from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 
+// 15000 euro online courses per month.'
+// // The input text
+const text = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+
+// Extract all numbers using a regular expression
+const numbers = text.match(/\d+/g).map(Number); // [5000, 10000, 15000]
+
+// Assign numbers to variables based on their meaning
+const monthlySalary = numbers[0]; // 5000 euro per month
+const annualBonus = numbers[1]; // 10000 euro per year
+const monthlyCourses = numbers[2]; // 15000 euro per month
+
+// Calculate annual income
+const annualSalary = monthlySalary * 12; // 5000 * 12 = 60,000
+const annualCourses = monthlyCourses * 12; // 15000 * 12 = 180,000
+const totalAnnualIncome = annualSalary + annualBonus + annualCourses;
+
+// Output the result
+console.log(totalAnnualIncome); // 250000
+
+// let num1 = Math.floor(Math.random()*255)+1
+// console.log(num1);
+//  let count = 3
+//  console.log(count++);
+//  console.log(count);
+ 
+//let number = prompt('enter  a number')
+//console.log(number); 
+//Write a script that prompt the user to enter number of years.
+// Calculate the number of seconds a person can live.
+  //Assume some one lives just hundred years
+
+ 
+  // let years = prompt('enter your year').trim().toLowerCase();
+
+  // if ( years == 'september'|| years == 'april' || years == 'june' || years == 'november') {
+  //   console.log('it has 30 day');
+  // }else if (years == 'january' || years == 'march' || years == 'may' || years == 'june' || years == 'july' ||years ==  'october' || years == 'december') {
+  //   console.log('it has 31 days');
+  // } else if(years == 'february'){
+  //   console.log('29 days cause laep year');
+  // }else{
+  //   console.log('invalid');
+  // }
+
+
+  //loops
+  for (let i = 5; i >= 1; i--) {
+    //const element = array[i];
+    for (let index = 0; index <= 12; index++) {
+     // const element = array[index];
+      console.log(`${i}*${index}=${i*index}`);
+  }
+ 
+    }
+
+
+
+
+
+  
+</script>
