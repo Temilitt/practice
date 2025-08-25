@@ -10,10 +10,58 @@
 	<h2>Introduction</h2>
 	<button onclick="alert('welcome to javavascript')">click me</button> -->
 
-    <button onclick="alert('welcome to javascript')">click me</button>
+    <!-- <button onclick="alert('welcome to javascript')">click me</button> -->
+<input type="text"  id="InputText" .placeholder="enter your world">
+<button id="addMe" onclick="Addme()">add</button>
+<button id="deleteMe" onclick="Deleteme()">delete</button>
+<div id="displayREsult"></div>
+   
 </body>
 </html>
 <script>
+    
+    let task = []
+            let tasks = [];
+
+        function addTask() {
+            let taskInput = document.getElementById('taskInput').value.trim();
+            let displayTasks = document.getElementById('displayTasks');
+
+            if (taskInput === '') {
+                alert('Please enter a task');
+            } else {
+                tasks.push(taskInput);
+                document.getElementById('taskInput').value = ''; // Clear input
+                displayTasks.innerHTML = ''; // Clear current display
+                for (let index = 0; index < tasks.length; index++) {
+                    const task = tasks[index];
+                    displayTasks.innerHTML += `<h4>${task}</h4>`;
+                }
+            }
+        }
+
+        function deleteTasks() {
+            let displayTasks = document.getElementById('displayTasks');
+            tasks = []; // Clear the array
+            displayTasks.innerHTML = ''; // Clear the display
+        }
+  
+
+
+   
+
+    
+
+//    function SumOfName(params) {
+//     let Firstname = 'Aderounmu'
+//     let Lastname = 'Temiloluwa'
+//     let space = ' '
+//     let sum = Firstname  + ' ' + Lastname 
+//     return sum
+    
+//    }
+//       console.log(SumOfName());
+
     // console.log(2+2);
      //comments can make code readable
     //  comments can make code readable,
@@ -253,19 +301,19 @@
 //git commit -m "different commit message"
 //git push origin master
 
-const PI = Math.PI
-console.log(Math.round(PI));
+// const PI = Math.PI
+// console.log(Math.round(PI));
 
-const RandNum = Math.floor(Math.random()*10+1)
-console.log(RandNum);
+// const RandNum = Math.floor(Math.random()*10+1)
+// console.log(RandNum);
 
-let a = 4
-let b = 10
-console.log(`the sum of ${a} and ${b} is ${a+b}`);
+// let a = 4
+// let b = 10
+// console.log(`the sum of ${a} and ${b} is ${a+b}`);
 
-let num = 15
-let Numint = parseInt(num)
-console.log(Numint);
+// let num = 15
+// let Numint = parseInt(num)
+// console.log(Numint);
 
 //'Love is the best thing in this world. Some found their love and some are still looking for their love.
 let guess = 'Love is the best thing in this world. Some found their love and some are still looking for their love.'
@@ -320,14 +368,67 @@ console.log(totalAnnualIncome); // 250000
 
 
   //loops
-  for (let i = 5; i >= 1; i--) {
-    //const element = array[i];
-    for (let index = 0; index <= 12; index++) {
-     // const element = array[index];
-      console.log(`${i}*${index}=${i*index}`);
-  }
+  //for (let i = 5; i >= 1; i--)// {
+//     //const element = array[i];
+//     for (let index = 0; index <= 12; index++) {
+//      // const element = array[index];
+//       console.log(`${i}*${index}=${i*index}`);
+//   }
  
-    }
+//     }
+
+    // 
+    
+    // const arr = []
+    // console.log(arr);
+
+    
+let isRaining = false
+if (isRaining) {
+  console.log('Remember to take your rain coat.')
+}
+
+const arr = Array()
+console.log(arr);
+
+const fruits = ['banana', 'orange', 'mango', 'lemon']
+let LastFruits = fruits.length -1
+console.log(fruits[LastFruits]);
+
+const webTechs = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB'
+] 
+let lastWebtech = webTechs.length-1
+console.log(webTechs[lastWebtech]);
+
+const firstList = [1, 2, 3]
+const secondList = [4, 5, 6]
+const thirdList = firstList.concat(secondList)
+console.log(thirdList);
+
+const number = [1,2,3,4,5]
+console.log(number.slice(0,3));
+
+for (let index = 0; index <= 10 ; index++) {
+   // const element = array[index];
+    console.log(`${index} * 2 = ${index * 2}`);
+    
+}
+
+const numberss = [1, 2, 3, 4, 5]
+for (let i = 0; i < array.length; i++) {
+    //const element = array i];
+
+    
+}
+
+
 
 
 
