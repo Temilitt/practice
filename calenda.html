@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI CALENDER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #displayTasks {
+            background-color: burlywood;
+            margin-top: 20px;
+            width: 340px;
+            color: red;
+            font-size: larger;
+            height: 60px;
+            padding: 20px;
+             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #displayTasks h4 {
+            padding: 20px;
+            background-color: burlywood;
+            padding: 10px;
+            font-size: larger;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>MINI CALENDER</h1>
+    <input type="text" id="taskInput"  placeholder="Enter a Month">
+    <button onclick="ClickMe()">Click Me</button>
+    <div id="displayTasks"></div>
+</body>
+</html>
+<script>
+    
+      function ClickMe() {
+        let task = document.getElementById('taskInput').value.trim().toLowerCase();
+        let displayTasks = document.getElementById('displayTasks');
+
+        if (task === 'january' || task === 'march' || task === 'may' || task === 'july' || task === 'august' || task === 'october' || task === 'december') {
+            displayTasks.innerHTML = `${task} has 31 days`;
+            alert(`${task} has 31 days`)
+        } else if (task === 'april' || task === 'june' || task === 'september' || task === 'november') {
+            displayTasks.innerHTML = `${task} has 30 days`;
+              alert(`${task} has 30 days`)
+        } else if (task === 'february') {
+            displayTasks.innerHTML = `${task} has 28 days`;
+              alert(`${task} has 28 days`)
+        } else {
+            displayTasks.innerHTML = "Invalid month";
+              alert(`Invalid month`)
+        }
+    }
+</script>
