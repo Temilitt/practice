@@ -74,8 +74,8 @@
     </div>
     <script>
         function calBmi() {
-            let height = parseFloat(document.getElementById('InputHeight').value)
-            let weight = parseFloat(document.getElementById('InputWeight').value)
+            let height = document.getElementById('InputHeight').value
+            let weight = document.getElementById('InputWeight').value
             let resultDisplay = document.getElementById('result')
 
            if ( height <= 0 || weight <= 0) {
