@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Enter the product">
+    <button onclick="ClickMe()">Click Me</button>
+</body>
+</html>
+
+<script>
+
+    
+    function ClickMe() {
+        let inputText = document.getElementById('inputText').value.trim().toLowerCase()
+
+        let productArr =['nike' , 'addidas' , 'puma' ,'reebok' ,'reebok']
+        if (inputText === '') {
+            alert('Please insert a text')
+            
+        } else if (productArr.includes(inputText)) {
+            alert('Available in store')
+        } else {
+            alert('not available in store')
+        } {
+            
+        }
+    }
+
+    //global scope
+    // let newVar = 'Javascript from global scope'
+
+    // function newVar(params) {
+    //     let newVar2 = ''
+    // }
+
+    //global scope available inside
+
+    //function types 
+    const ArrowFunction = () =>{
+        console.log('this is an arrow function');
+        
+    }
+
+    ArrowFunction();
+
+    function paramsEx(params) {
+        console.log(params + 12);
+        
+    };
+
+    paramsEx('3')
+
+    function addManyNum() {
+        let sum = 0
+        console.log(arguments);
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+             sum = sum + element
+        }
+         console.log(sum);
+    }
+
+    addManyNum(1,2,3,4,5,6,7,8,9,10)
+
+  
+   // console.log(eval(copiedArr.join('+')));
+
+   
+    //console.log(eval(addManyNum(1,2,3,4,5,6,7,8,9,10).join('+')));
+    
+    
+
+
+
+    let numArr = [1,2,3,4,5,6]
+    let sum = 0
+    for (let i = 0; i < numArr.length; i++) {
+        sum = sum + numArr[i]
+       }console.log(sum)
+
+       let numArr2 = [1,2,3,4,5,6]
+       console.log(eval(numArr2.join('+')));
+       console.log(eval('1+2 + 3 + 4 + 6'));
+
+
+
+       //function returing a value
+
+       function returnExample() {
+        let name = 'Adedotun'
+
+        
+       }
+       
+       
+ 
+
+</script>
