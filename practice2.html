@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="changeTheme()">change theme</button>
+    <br><br><br>
+    <input type="password" name="" id="passwordCheck">
+    <button onclick="ClikMe()">Click Me</button>
+
+    <br><br><br>
+
+    <input type="text" id="nameInput">
+    <button onclick="addName()">Click me</button>
+    <div id="displayName"></div>
+
+      <input type="text" id="input"> <button onclick="checkWeather()"> click </button>
+      <div id="showMe"></div> -->
+
+       <input type="text" id="wordValues">
+    <button onclick="checkWord()">Check Word</button>
+    <h1 id="showWord"></h1>
+
+</body>
+</html>
+<script>
+    let wordValues = document.getElementById('wordValues')
+    let showWord = document.getElementById('showWord')
+    // wordValues.value = 'whatever i want'
+
+    function checkWord() {
+       // console.log(wordValues.value);
+       // console.log(typeof wordValues.value);
+        let textWord = wordValues.value.toLowerCase().
+            replaceAll('fuck', 'f**k').
+            replaceAll('shit', 'sh*t').
+            replaceAll('bitch', 'b**ch')
+        console.log(textWord[0]);
+        showWord.innerHTML = textWord.replace(textWord[0], textWord[0].toUpperCase())
+    }
+
+
+     let typedData = []
+     function addName() {
+        let nameInput = document.getElementById('nameInput').value.trim()
+        let displayName = document.getElementById('displayName')
+         if (nameInput === '') {
+            alert('all fields are mandatory')
+         }else{
+            typedData.push(nameInput)
+            displayName.innerHTML = ''
+            for (let index = 0; index < typedData.length; index++) {
+                const element = typedData[index];
+                displayName.innerHTML += `<h2>${element}</h2>`
+            }
+         }
+     }
+
+     function checkWeather(params) {
+    let input = document.getElementById('input').value.trim().toLowerCase();
+    let showMe = document.getElementById('showMe');
+    let weatherCondition = input;
+
+    if (weatherCondition === "sunny") {
+        alert('it is sunny outside');
+    } else if (weatherCondition === "rainy") {
+        alert('it is raining outside');
+    } else if (weatherCondition === "windy") {
+        alert('it is windy outside');
+    } else if (weatherCondition === 'cloudy') {
+        alert('it is cloudy outside');
+    } else if (weatherCondition === 'snowy') {
+        alert('it is snowy outside');
+    } else {
+        alert('invalid weather condition');
+    }
+    showMe.innerHTML += `<h4>${weatherCondition}</h4>`;
+}
+
+  
+
+
+
+    // function changeTheme() {
+    //     let change = document.body
+    //     if (change.style.backgroundColor === '') {
+    //         change.style.backgroundColor = 'black'
+    //         change.style.color = 'white'
+    //     } else {
+    //         change.style.backgroundColor =''
+    //         change.style.color ='black'
+    //     }
+    // }
+    // function ClikMe() {
+    //     let passwordCheck = document.getElementById('passwordCheck')
+    //     if (passwordCheck.type === 'password') {
+    //         passwordCheck.type === 'text'
+    //     } else {
+    //         passwordCheck.type === 'password'
+    //     }
+    // }
+
+    function solveLinEquation(a, b, c, x) {
+    if (b === 0) {
+        return "Cannot solve: b cannot be zero.";
+    }
+    let y = (-c - a * x) / b;
+    return y;
+}
+
+  // Generate a random number between 0 and 15 (inclusive) for each hexadecimal digit
+  const hexDigits = '0123456789abcdef';
+  let hexColor = '#';
+
+  for (let i = 0; i < 6; i++) {
+    hexColor += hexDigits[Math.floor(Math.random() * 16)];
+  }
+
+  return hexColor;
+
+
+// Example usage:
+const randomHex = randomHexaNumberGenerator();
+console.log(randomHex);
+
+let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-images img');
+    const totalImages = images.length;
+
+
+   
+</script>

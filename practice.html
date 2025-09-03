@@ -11,39 +11,117 @@
 	<button onclick="alert('welcome to javavascript')">click me</button> -->
 
     <!-- <button onclick="alert('welcome to javascript')">click me</button> -->
-<input type="text"  id="InputText" .placeholder="enter your world">
+<!-- <input type="text"  id="InputText" .placeholder="enter your world">
 <button id="addMe" onclick="Addme()">add</button>
 <button id="deleteMe" onclick="Deleteme()">delete</button>
-<div id="displayREsult"></div>
+<div id="displayREsult"></div> -->
+
+<input type="text" id="MonthIn" placeholder="Enter a  month">
    
 </body>
 </html>
 <script>
+
+let score = ''; // Input as a string
+//score = Number(score); // Convert to a number
+
+// if (score >= 80 && score <= 100) {
+//     alert('na a');
+// } else if (score >= 70 && score <= 79) {
+//     alert('na b');
+// } else if (score >= 60 && score <= 69) {
+//     alert('na c');
+// } else if (score >= 50 && score <= 59) {
+//     alert('na d');
+// } else if (score >= 0 && score <= 49) {
+//     alert('na f');
+// } else {
+//     alert('invalid');
+// }
+
+// Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
+// September, October or November, the season is Autumn.
+// December, January or February, the season is Winter.
+// March, April or May, the season is Spring
+// June, July or August, the season is Summer
+
+let  months = 'October'
+  months = months.toLowerCase()
+
+  if (months === 'September' ||months === 'october'|| months === 'november' ) {
+    alert('season na autumn')
+  } else if(months === 'december' ||months === 'january'|| months === 'february') {
+     alert('season na winter')
+  }else if(months === 'march' ||months === 'august'|| months === 'mayr') {
+     alert('season na spring')
+  }else{
+     alert('season na invalid')
+  }
+
+  let days = prompt('What is today')
+  days = days.toLowerCase()
+
+  if (days === 'saturday'|| days === 'sunday') {
+    alert('weekend')
+  }else if(days === 'monday'|| days === 'tuesday'||days === 'wednesday'|| days === 'friday'){
+    alert('working day')
+  }
+  
+
+
+    // let months = 'may'
+    // months = months.toLowerCase()
+    // if ( months === 'january') {
+    //     alert('31 days')
+    // } else if(months === 'february') {
+    //      alert('24 days')
+    // }else if(months === 'march') {
+    //      alert('24 days')
+    // }else if(months === 'april') {
+    //      alert('42 days')
+    // }else if(months === 'may') {
+    //      alert('1 days')
+    // }else if(months === 'june') {
+    //      alert('22 days')
+    // }else if(months === 'july') {
+    //      alert('30 days')
+    // }else {
+    //     alert('a valid')
+    // }
+
+// Write a code which can give grades to students according to theirs scores:
+// 80-100, A
+// 70-89, B
+// 60-69, C
+// 50-59, D
+// 0-49, F
+
    
-            let tasks = [];
+   
+        //     let tasks = [];
 
-        function addTask() {
-            let taskInput = document.getElementById('taskInput').value.trim();
-            let displayTasks = document.getElementById('displayTasks');
+        // function addTask() {
+        //     let taskInput = document.getElementById('taskInput').value.trim();
+        //     let displayTasks = document.getElementById('displayTasks');
 
-            if (taskInput === '') {
-                alert('Please enter a task');
-            } else {
-                tasks.push(taskInput);
-                document.getElementById('taskInput').value = ''; // Clear input
-                displayTasks.innerHTML = ''; // Clear current display
-                for (let index = 0; index < tasks.length; index++) {
-                    const task = tasks[index];
-                    displayTasks.innerHTML += `<h4>${task}</h4>`;
-                }
-            }
-        }
+        //     if (taskInput === '') {
+        //         alert('Please enter a task');
+        //     } else {
+        //         tasks.push(taskInput);
+        //         document.getElementById('taskInput').value = ''; // Clear input
+        //         displayTasks.innerHTML = ''; // Clear current display
+        //         for (let index = 0; index < tasks.length; index++) {
+        //             const task = tasks[index];
+        //             displayTasks.innerHTML += `<h4>${task}</h4>`;
+        //         }
+        //     }
+        // }
 
-        function deleteTasks() {
-            let displayTasks = document.getElementById('displayTasks');
-            tasks = []; // Clear the array
-            displayTasks.innerHTML = ''; // Clear the display
-        }
+        // function deleteTasks() {
+        //     let displayTasks = document.getElementById('displayTasks');
+        //     tasks = []; // Clear the array
+        //     displayTasks.innerHTML = ''; // Clear the display
+        // }
   
 
 
@@ -446,3 +524,89 @@ for (let i = 0; i < array.length; i++) {
 
   
 </script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Image Carousel</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      width: 400px;
+      height: 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Image Carousel</h2>
+  <img id="carousel" src="https://via.placeholder.com/400x250?text=Image+1" alt="Carousel Image">
+  <br>
+  <button onclick="prevImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+
+  <script>
+    // Array of images
+    let images = [
+      "https://via.placeholder.com/400x250?text=Image+1",
+      "https://via.placeholder.com/400x250?text=Image+2",
+      "https://via.placeholder.com/400x250?text=Image+3",
+      "https://via.placeholder.com/400x250?text=Image+4"
+    ];
+
+    let index = 0; // Start with the first image
+
+    // Function to show image based on index
+    function showImage(i) {
+      // If index goes beyond the array, reset it
+      if (i < 0) {
+        index = images.length - 1;
+      } else if (i >= images.length) {
+        index = 0;
+      }
+
+      // Use a for loop to find the correct image
+      for (let j = 0; j < images.length; j++) {
+        if (j === index) {
+          document.getElementById("carousel").src = images[j];
+        }
+      }
+    }
+
+    // Go to next image
+    function nextImage() {
+      index++;
+      showImage(index);
+    }
+
+    // Go to previous image
+    function prevImage() {
+      index--;
+      showImage(index);
+    }
+  </script>
+
+</body>
+</html>

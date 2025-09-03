@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID CARD Carousel</title>
+    <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #carousel {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      background-color: #f9f9f9;
+    }
+    #carousel p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #555;
+    }
+    </style>
+</head>
+<body>
+    <h2> ID CARD CAROUSEL</h2>
+    <div id="carousel">
+        <p><strong>Name:</strong> <span id="profile-name"></span></p>
+        <p><strong>ID Number:</strong> <span id="profile-id"></span></p>
+        <p><strong>Job in Tech:</strong> <span id="profile-job"></span></p>
+    </div>
+    <br>
+    <button onclick="prevProfile()">Previous</button>
+    <button onclick="nextProfile()">Next</button>
+
+    <script>
+        const profiles = [
+            { name: "DR TEMI", id: "210204", job: "Software Engineer" },
+            { name: "DEV TEMI", id: "210205", job: "Data Scientist" },
+            { name: "CHIEF TEMI", id: "210206", job: "UX Designer" }
+        ]
+
+        let Index = 0
+
+        function showProfile() {
+            if (Index < 0) {
+                Index = profiles.length - 1
+            } else if (Index >= profiles.length) {
+                Index = 0
+            }
+            document.getElementById('profile-name').innerHTML = profiles[Index]
+            document.getElementById('profile-id').innerHTML = profiles[Index]
+            document.getElementById('profile-job').innerHTML = profiles[Index]
+        }
+
+        function nextProfile() {
+            Index++
+            showProfile()
+        }
+
+        function prevProfile() {
+            Index--
+            showProfile()
+        }
+
+        showProfile()
+    </script>
+</body>
+</html>

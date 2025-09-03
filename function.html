@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="inputText" placeholder="Enter the product">
-    <button onclick="ClickMe()">Click Me</button>
+    <!-- <input type="text" id="inputText" placeholder="Enter the product">
+    <button onclick="ClickMe()">Click Me</button> -->
+    <div id="display"></div>
 </body>
 </html>
 
@@ -20,7 +21,7 @@
         let productArr =['nike' , 'addidas' , 'puma' ,'reebok' ,'reebok']
         if (inputText === '') {
             alert('Please insert a text')
-            
+
         } else if (productArr.includes(inputText)) {
             alert('Available in store')
         } else {
@@ -95,6 +96,38 @@
 
         
        }
+
+
+
+
+       let user = {
+        firstName: 'Aderounmu',
+        lastName: 'Temiloluwa',
+        age: '44',
+        isMarried: 'False',
+        courses: 'Javascript, Typescript',
+        stack:{
+            frontEnd:['React , Next'],
+            BackEnd: ['Node' ,'Php' ,'Graph']
+        }
+       }
+
+       console.log(user.firstName);
+       console.log(user['firstName']);
+      let displayName = document.getElementById('displayName')
+
+      let collectedData = user.stack.BackEnd
+      for (let index = 0; index < collectedData.length; index++) {
+        const element = collectedData[index];
+        displayName.innerHTML += `<h1>${element}<h1>`;
+        
+      }
+
+
+       
+       
+       
+       
        
        
  

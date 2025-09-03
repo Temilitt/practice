@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButt" onclick="changeTheme()">Dark Mode</button>
+    <input type="password" id="PasswordCheck">
+    <button id="myButt" onclick="toggle()">show</button>
+</body>
+</html>
+<script>
+function toggle() {
+    let PasswordCheck = document.getElementById('PasswordCheck')
+    if (PasswordCheck.type === 'password') {
+        PasswordCheck.type = 'text'
+       myButt.innerHTML = 'show'
+
+    }else{
+        PasswordCheck.type = 'password'
+         myButt.innerHTML = 'hide'
+    }
+}
+    
+
+   function genRan(params) {
+    let red = Math.floor(Math.random()*256)
+    let green = Math.floor(Math.random()*256)
+    let blue = Math.floor(Math.random()*256)
+
+    return `rgb ${red},${green},${blue}`
+   }
+   console.log(genRan());
+
+
+   function changeTheme() {
+
+    let change = document.body
+    if (change.style.backgroundColor === '') {
+        myButt.innerHTML ===`Light mode`
+        change.style.backgroundColor = 'black'
+        change.style.color = 'white'
+    }else{
+        change.backgroundColor = 'white'
+        change.style.color = 'black'
+    }
+    
+   }
+
+      function genRGB() {
+        // let red = Math.floor(Math.random() * 256)
+        // let green = Math.floor(Math.random() * 256)
+        // let blue = Math.floor(Math.random() * 256)
+        function genDigit() {
+            return Math.floor(Math.random() * 256)
+        }
+        return `rgb(${genDigit()},${genDigit()},${genDigit()})`
+    }
+
+    console.log(genRGB()); //'rgb(255,255,255)'
+    console.log(genRGB());
+    console.log(genRGB());
+
+   
+</script>

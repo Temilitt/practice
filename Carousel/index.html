@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      width: 400px;
+      height: 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+    <h2>Simple Image Carousel</h2>
+   <img src="pexels-pixabay-163872.jpg" id="carousel" alt="">
+  <br>
+  <button onclick="prevImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+
+ 
+
+</body>
+</html>
+<script>
+    const images = [
+       'pexels-pixabay-163872.jpg',
+       'myimg1.jpg',
+       'myimg2.jpg'
+    ]
+
+            let Index = 0
+
+        function showImage() {
+            if (Index < 0) {
+                Index = images.length - 1
+            } else if (Index >= images.length) {
+                Index = 0
+            }
+            document.getElementById('carousel').src = images[Index]
+        }
+
+        function nextImage() {
+            Index++
+            showImage()
+        }
+
+        function prevImage() {
+            Index--
+            showImage()
+        }
+
+     
+      //  showImage()
+
+
+
+
+</script>
