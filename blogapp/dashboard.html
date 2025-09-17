@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.85); 
+            padding: 20px;
+            border-radius: 8px;
+        }
+        nav {
+            background-color: #1e90ff;
+            padding: 15px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            color: #f0f0f0;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .post-input {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .post-input textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .post-input .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .post-input button {
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .post-input button:hover {
+            background-color: #4682b4;
+        }
+        .post-input .delete-btn {
+            background-color: #ff4444;
+        }
+        .post-input .delete-btn:hover {
+            background-color: #cc0000;
+        }
+        .post-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        .post-input input[type="file"] {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .post-box img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>My Mini Blog</h1></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#" onclick="logout()">Log Out</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to My Blog</h2>
+            <p>This is a simple mini blog where I share my thoughts and experiences. Feel free to explore!</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm passionate about writing and sharing stories. This blog is my space to connect with you.</p>
+        </section>
+
+        <section id="posts">
+            <h2>Recent Posts</h2>
+            <div class="post-input">
+                <textarea id="postContent" placeholder="Write your post here..."></textarea>
+                <input type="file" id="photo">
+                <div class="button-group">
+                    <button onclick="addPost()">Add Post</button>
+                </div>
+            </div>
+            <div class="post-box" id="postBox">
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<script>
+    let userDatabase = JSON.parse(localStorage.getItem('augustJsDatabase')) || []
+    let postBox = JSON.parse(localStorage.getItem('postBox')) || []
+
+    function logout() {
+        let confirmPassword = confirm('Are you sure you want to log out?')
+        if (confirmPassword) {
+            localStorage.removeItem('augustJsUserIndex')
+            window.location.href = 'login.html'
+        }
+    }
+
+    function addPost() {
+        let postContent = document.getElementById('postContent').value.trim()
+        let file = document.getElementById('photo').files[0]
+
+        if (!postContent || !file) {
+            alert('All fields are mandatory! Please provide both text and an image.')
+            return
+        }
+
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(ev) {
+            let imageData = ev.target.result;
+
+            postBox.push({
+                text: postContent,
+                image: imageData
+            });
+
+            localStorage.setItem('postBox', JSON.stringify(postBox));
+            document.getElementById('postContent').value = '';
+            document.getElementById('photo').value = '';
+            displayPosts();
+        }
+    }
+
+    function displayPosts() {
+        let postBoxElement = document.getElementById('postBox')
+        postBoxElement.innerHTML = ''
+        for (let index = 0; index < postBox.length; index++) {
+            const post = postBox[index]
+            postBoxElement.innerHTML += `
+                <div>
+                    <h4>${index + 1}. ${post.text}</h4>
+                    <img src="${post.image}" alt="Post image">
+                    <button onclick="deleteeMe(${index})">Delete</button>
+                    <button onclick="editDescription(${index})">Edit</button>
+                </div>
+            `
+        }
+    }
+
+    function editDescription(index) {
+        let editInput = prompt('Edit post content:', postBox[index].text);
+        if (editInput !== null && editInput.trim() !== '') {
+            postBox[index].text = editInput.trim()
+            localStorage.setItem('postBox', JSON.stringify(postBox))
+            displayPosts()
+        }
+    }
+
+    function deleteeMe(index) {
+        postBox.splice(index, 1)
+        localStorage.setItem('postBox', JSON.stringify(postBox))
+        displayPosts()
+    }
+
+    displayPosts()
+
+    
+</script>
